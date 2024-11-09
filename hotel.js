@@ -1,20 +1,20 @@
-// Sample Data for Hotels, Rooms, and PGs
+
 const hotels = [
     {
         name: 'Hotel Green Valley',
         price: '$100 per night',
         location: 'Paltan Bazar, Guwahati',
-        contact: '+91 9876543210',
+        contact: '+91 0000000000',
         image: 'https://via.placeholder.com/350x200.png?text=Hotel+Green+Valley',
-        mapsLink: 'Paltan Bazar, Guwahati'
+        mapsLink: 'Paltan+Bazar+Guwahati'
     },
     {
         name: 'Hotel Blue Sky',
         price: '$120 per night',
         location: 'Pan Bazar, Guwahati',
-        contact: '+91 9988776655',
+        contact: '+91 000000000000',
         image: 'https://via.placeholder.com/350x200.png?text=Hotel+Blue+Sky',
-        mapsLink: 'Pan Bazar, Guwahati'
+        mapsLink: 'Pan+Bazar+Guwahati'
     }
 ];
 
@@ -23,9 +23,9 @@ const rooms = [
         name: 'Luxury Suite',
         price: '$80 per night',
         location: 'Bhangagarh, Guwahati',
-        contact: '+91 9123456789',
+        contact: '+91 00000000000',
         image: 'https://via.placeholder.com/350x200.png?text=Luxury+Suite',
-        mapsLink: 'Bhangagarh, Guwahati'
+        mapsLink: 'Bhangagarh+Guwahati'
     }
 ];
 
@@ -34,15 +34,16 @@ const pgs = [
         name: 'Cozy PG for Women',
         price: '$50 per month',
         location: 'Ganeshguri, Guwahati',
-        contact: '+91 9876567890',
+        contact: '+91 00000000000',
         image: 'https://via.placeholder.com/350x200.png?text=Cozy+PG+for+Women',
-        mapsLink: 'Ganeshguri, Guwahati'
+        mapsLink: 'Ganeshguri+Guwahati'
     }
 ];
 
 // Function to Render Cards
 function renderCards(data) {
     const contentDiv = document.getElementById('dynamic-content');
+    if (!contentDiv) return;
     contentDiv.innerHTML = '';
 
     data.forEach(item => {
@@ -68,20 +69,32 @@ function openGoogleMaps(location) {
 }
 
 // Event Listeners for Navigation Buttons
-document.getElementById('show-hotels').addEventListener('click', () => {
-    document.getElementById('section-title').innerText = 'Available Hotels';
-    renderCards(hotels);
-});
+const showHotelsBtn = document.getElementById('show-hotels');
+const showRoomsBtn = document.getElementById('show-rooms');
+const showPGsBtn = document.getElementById('show-pgs');
 
-document.getElementById('show-rooms').addEventListener('click', () => {
-    document.getElementById('section-title').innerText = 'Available Rooms';
-    renderCards(rooms);
-});
+if (showHotelsBtn) {
+    showHotelsBtn.addEventListener('click', () => {
+        document.getElementById('section-title').innerText = 'Available Hotels';
+        renderCards(hotels);
+    });
+}
 
-document.getElementById('show-pgs').addEventListener('click', () => {
-    document.getElementById('section-title').innerText = 'Available PGs';
-    renderCards(pgs);
-});
+if (showRoomsBtn) {
+    showRoomsBtn.addEventListener('click', () => {
+        document.getElementById('section-title').innerText = 'Available Rooms';
+        renderCards(rooms);
+    });
+}
+
+if (showPGsBtn) {
+    showPGsBtn.addEventListener('click', () => {
+        document.getElementById('section-title').innerText = 'Available PGs';
+        renderCards(pgs);
+    });
+}
 
 // Load Hotels by Default
-window.onload = () => renderCards(hotels);
+document.addEventListener('DOMContentLoaded', () => {
+    renderCards(hotels);
+});
