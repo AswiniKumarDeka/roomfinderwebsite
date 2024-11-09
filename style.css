@@ -1,0 +1,429 @@
+/* Global Styles */
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Header Section */
+header {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #007bff;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Navbar container */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Brand */
+/* Style for the brand */
+.brand {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    display: inline-flex;  /* Allows for text and image to align */
+    align-items: center;   /* Vertically aligns text and image */
+    gap: 10px;  /* Adds space between the text and image */
+    padding: 10px;
+}
+
+/* Style for the logo image */
+.brand-logo {
+    width: 30px;  /* Adjust the width of the logo */
+    height: 30px; /* Adjust the height of the logo */
+    object-fit: contain;  /* Ensures the logo scales proportionally */
+}
+
+
+/* Navbar Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #ffd700;
+}
+
+/* Hamburger Icon */
+.nav-toggle {
+    display: none; /* Hidden by default */
+    background-color: transparent;
+    border: none;
+    font-size: 30px; /* Larger size for better visibility */
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    /* Show the hamburger icon on small screens */
+    .nav-toggle {
+        display: block;
+    }
+
+    /* Make the nav links stack vertically when the hamburger icon is clicked */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #007bff;
+        position: absolute;
+        top: 60px; /* Adjust if needed */
+        right: 20px;
+        width: 200px;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Show the nav links when active */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Ensure the brand name is not pushed to the side on small screens */
+    .brand {
+        font-size: 18px;
+    }
+
+    /* Style the search bar for mobile screens */
+    .search-section input {
+        width: 70%; /* Reduce the width on small screens */
+    }
+}
+
+/* Rooms Section */
+#rooms-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.room {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.room img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.room h2 {
+    margin: 10px 0;
+}
+
+.room button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.room button:hover {
+    background-color: #218838;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#room-images img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#book-room {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#book-room:hover {
+    background-color: #218838;
+}
+
+/* Disclaimer Section Styles */
+.disclaimer {
+    background-color: #f4f4f4;
+    padding: 40px;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    animation: fadeInUp 1.5s ease-out;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 900px;
+    color: #333;
+}
+
+.disclaimer h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #007bff;
+    animation: slideInLeft 1s ease-in-out;
+}
+
+.disclaimer-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 15px 0;
+    color: #555;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+/* Intro Section Styles */
+/* Intro Section Styles */
+/* Intro Section with Blinking Background */
+.intro-section {
+    background: linear-gradient(135deg, #007bff, #00c8ff);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 12px;
+    margin: 20px auto;
+    max-width: 900px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    animation: blinkBackground 3s infinite; /* Infinite blinking */
+}
+
+/* Heading Animation */
+.intro-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #fff;
+    animation: slideInLeft 1s ease-in-out;
+}
+
+/* Paragraph Animation */
+.intro-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 10px 0;
+    color: #f4f4f4;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+/* Blinking Background Animation */
+@keyframes blinkBackground {
+    0% {
+        background: linear-gradient(135deg, #007bff, #00c8ff);
+    }
+    25% {
+        background: linear-gradient(135deg, #00c8ff, #fdfd02fb);
+    }
+    50% {
+        background: linear-gradient(135deg, #fdfd02fb, #ff6347);
+    }
+    75% {
+        background: linear-gradient(135deg, #ff6347, #12e112);
+    }
+    100% {
+        background: linear-gradient(135deg, #12e112, #007bff);
+    }
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Slide In Left Animation */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.intro-section1 {
+    background: linear-gradient(135deg, #007bff, #00c8ff);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 12px;
+    margin: 20px auto;
+    max-width: 900px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    
+}
+
+.intro-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #fff;
+    animation: slideInLeft 1s ease-in-out;
+}
+
+.intro-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 10px 0;
+    color: #f4f4f4;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin: 10px 0;
+}
+
+.footer-content a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    color: #0056b3;
+}
+
+#social-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Aligns items to the center */
+    gap: 15px; /* Spacing between icons */
+    margin-top: 20px; /* Space from the top */
+}
+
+#social-links li {
+    display: inline-block;
+}
+
+#social-links a {
+    display: inline-block;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+#social-links a:hover {
+    transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+#social-links img {
+    width: 40px; /* Adjust icon size */
+    height: 40px; /* Adjust icon size */
+    border-radius: 50%; /* Makes the icons circular */
+    object-fit: cover; /* Ensures image fits within the circle */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .intro-section {
+        padding: 30px 15px;
+    }
+
+    .intro-section h2 {
+        font-size: 26px;
+    }
+
+    .intro-content p {
+        font-size: 16px;
+    }
+
+    .disclaimer-content p {
+        font-size: 14px;
+    }
+
+    .disclaimer h2 {
+        font-size: 24px;
+    }
+}
