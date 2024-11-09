@@ -1,87 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hotels and Menu</title>
-    <link rel="stylesheet" href="hotel.css">
+    <link rel="stylesheet" href="hotel.css" />
     <!-- Google Maps API -->
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY"></script>
-</head>
-<body>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <a href="#" class="brand">
+          <img src="bg image.jpg" alt="Room Finder Logo" class="brand-logo" />
+          Room Finder
+        </a>
+
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Toggle Navigation"
+        >
+          ☰
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="room.html">Rooms</a></li>
+          <li><a href="pg.html">PGs</a></li>
+          <li><a href="hotel.html">Hotels & Restaurants</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Login/Register</a></li>
+        </ul>
+      </div>
+    </nav>
     <div class="container">
-        <!-- Navigation Buttons -->
-        <div class="navigation-buttons">
-            <button onclick="showSection('hotels')">Hotels</button>
-            <button onclick="showSection('menu')">Menu</button>
-        </div>
+      <!-- Navigation Buttons -->
+      <div class="navigation-buttons">
+        <button onclick="showSection('hotels')">Hotels</button>
+        <button onclick="showSection('menu')">Menu</button>
+      </div>
 
-        <!-- Hotels Section -->
-        <div id="hotels-section" class="section">
-            <h2>Available Hotels</h2>
-            <div id="hotels-list">
-                <!-- Hotel Item 1 -->
-                <div class="hotel-item">
-                    <img src="https://via.placeholder.com/350x200.png?text=Hotel+Green+Valley" alt="Hotel Image" class="hotel-img">
-                    <div class="hotel-details">
-                        <h3>Hotel Green Valley</h3>
-                        <p><strong>Price:</strong> $100 per night</p>
-                        <p><strong>Location:</strong> Paltan Bazar, Guwahati</p>
-                        <p><strong>Contact:</strong> +91 9876543210</p>
-                        <p>Comfortable rooms, free breakfast, pool, and free WiFi.</p>
-                        <button class="navigate-btn" onclick="openGoogleMaps('Paltan Bazar, Guwahati')">Navigate</button>
-                    </div>
-                </div>
-                
-                <!-- Hotel Item 2 -->
-                <div class="hotel-item">
-                    <img src="https://via.placeholder.com/350x200.png?text=Hotel+Elegance" alt="Hotel Image" class="hotel-img">
-                    <div class="hotel-details">
-                        <h3>Hotel Elegance</h3>
-                        <p><strong>Price:</strong> $150 per night</p>
-                        <p><strong>Location:</strong> Pan Bazar, Guwahati</p>
-                        <p><strong>Contact:</strong> +91 9988776655</p>
-                        <p>Luxury rooms, rooftop restaurant, and gym access.</p>
-                        <button class="navigate-btn" onclick="openGoogleMaps('Pan Bazar, Guwahati')">Navigate</button>
-                    </div>
-                </div>
+      <!-- Hotels Section -->
+      <div id="hotels-section" class="section">
+        <h2>Available Hotels</h2>
+        <div id="hotels-list">
+          <!-- Hotel Item 1 -->
+          <div class="hotel-item">
+            <img
+              src="https://via.placeholder.com/350x200.png?text=Hotel+Green+Valley"
+              alt="Hotel Image"
+              class="hotel-img"
+            />
+            <div class="hotel-details">
+              <h3>Hotel Green Valley</h3>
+              <p><strong>Price:</strong> $100 per night</p>
+              <p><strong>Location:</strong> Paltan Bazar, Guwahati</p>
+              <p><strong>Contact:</strong> +91 9876543210</p>
+              <p>Comfortable rooms, free breakfast, pool, and free WiFi.</p>
+              <button
+                class="navigate-btn"
+                onclick="openGoogleMaps('Paltan Bazar, Guwahati')"
+              >
+                Navigate
+              </button>
             </div>
-        </div>
+          </div>
 
-        <!-- Menu Card Section -->
-        <div id="menu-section" class="section" style="display: none;">
-            <h2>Menu Card</h2>
-            <div id="menu-card">
-                <div class="menu-item">
-                    <h4>Grilled Chicken</h4>
-                    <p><strong>Price:</strong> $12</p>
-                </div>
-                <div class="menu-item">
-                    <h4>Pasta Alfredo</h4>
-                    <p><strong>Price:</strong> $8</p>
-                </div>
-                <div class="menu-item">
-                    <h4>Vegetable Biryani</h4>
-                    <p><strong>Price:</strong> $10</p>
-                </div>
-                <!-- Add more menu items as needed -->
+          <!-- Hotel Item 2 -->
+          <div class="hotel-item">
+            <img
+              src="https://via.placeholder.com/350x200.png?text=Hotel+Elegance"
+              alt="Hotel Image"
+              class="hotel-img"
+            />
+            <div class="hotel-details">
+              <h3>Hotel Elegance</h3>
+              <p><strong>Price:</strong> $150 per night</p>
+              <p><strong>Location:</strong> Pan Bazar, Guwahati</p>
+              <p><strong>Contact:</strong> +91 9988776655</p>
+              <p>Luxury rooms, rooftop restaurant, and gym access.</p>
+              <button
+                class="navigate-btn"
+                onclick="openGoogleMaps('Pan Bazar, Guwahati')"
+              >
+                Navigate
+              </button>
             </div>
+          </div>
         </div>
+      </div>
+
+      <!-- Menu Card Section -->
+      <div id="menu-section" class="section" style="display: none">
+        <h2>Menu Card</h2>
+        <div id="menu-card">
+          <div class="menu-item">
+            <h4>Grilled Chicken</h4>
+            <p><strong>Price:</strong> $12</p>
+          </div>
+          <div class="menu-item">
+            <h4>Pasta Alfredo</h4>
+            <p><strong>Price:</strong> $8</p>
+          </div>
+          <div class="menu-item">
+            <h4>Vegetable Biryani</h4>
+            <p><strong>Price:</strong> $10</p>
+          </div>
+          <!-- Add more menu items as needed -->
+        </div>
+      </div>
     </div>
 
     <!-- JavaScript for Google Maps Navigation -->
     <script>
-        // Function to open Google Maps with the given location
-        function openGoogleMaps(location) {
-            const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`;
-            window.open(googleMapsUrl, '_blank');
-        }
+      document
+        .getElementById("navToggle")
+        .addEventListener("click", function () {
+          // Toggle the 'active' class on the nav-links element
+          document.getElementById("navLinks").classList.toggle("active");
+        });
+      // Function to open Google Maps with the given location
+      function openGoogleMaps(location) {
+        const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+          location
+        )}`;
+        window.open(googleMapsUrl, "_blank");
+      }
 
-        // Function to switch between sections
-        function showSection(sectionId) {
-            document.getElementById('hotels-section').style.display = sectionId === 'hotels' ? 'block' : 'none';
-            document.getElementById('menu-section').style.display = sectionId === 'menu' ? 'block' : 'none';
-        }
+      // Function to switch between sections
+      function showSection(sectionId) {
+        document.getElementById("hotels-section").style.display =
+          sectionId === "hotels" ? "block" : "none";
+        document.getElementById("menu-section").style.display =
+          sectionId === "menu" ? "block" : "none";
+      }
     </script>
-</body>
+  </body>
 </html>
