@@ -1,4 +1,9 @@
 // Contact Form Validation and Submission Handling
+document.getElementById('navToggle').addEventListener('click', function () {
+    // Toggle the 'active' class on the nav-links element
+    document.getElementById('navLinks').classList.toggle('active');
+});
+
 document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault(); // Prevent the default form submission
 
